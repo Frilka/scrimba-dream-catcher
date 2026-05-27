@@ -65,8 +65,7 @@ initDatabase().then(() => {
   console.error('Failed to initialize database:', error);
   process.exit(1)
 });
-  console.error('Failed to initialize database:', error);
-});
+
 process.on('SIGTERM', gracefulShutdown);
 
 async function gracefulShutdown() {
