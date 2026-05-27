@@ -1,6 +1,6 @@
 # Dream Journal App
 
-A full-stack web application that allows users to record their dreams and receive AI-powered interpretations using Claude.
+A full-stack web application that allows users to record their dreams and receive AI-powered interpretations using OpenAI/Gemini.
 
 ## Features
 
@@ -8,16 +8,16 @@ A full-stack web application that allows users to record their dreams and receiv
 - Get AI interpretations of your dreams
 - View all past dreams and their interpretations
 - Delete dreams
-- SQLite database for persistent storage
+- Postgres database for persistent storage
 - Vanilla JavaScript frontend
 - Express backend with RESTful API
 
 ## Tech Stack
 
 - **Backend**: Node.js, Express
-- **Database**: SQLite (better-sqlite3)
+- **Database**: Postgres
 - **Frontend**: HTML, CSS, Vanilla JavaScript
-- **AI**: Anthropic Claude API
+- **AI**: OpenAI/Gemini API
 
 ## Project Structure
 
@@ -25,9 +25,6 @@ A full-stack web application that allows users to record their dreams and receiv
 dream-journal/
 ├── server.js           # Express server and API routes
 ├── package.json        # Dependencies and scripts
-├── .env               # Environment variables (create this)
-├── .env.example       # Example env file
-├── dreams.db          # SQLite database (auto-created)
 └── public/
     ├── index.html     # Frontend HTML
     ├── styles.css     # Styles
@@ -50,14 +47,15 @@ Create a `.env` file in the root directory:
 cp .env.example .env
 ```
 
-Edit `.env` and add your Anthropic API key:
+Edit `.env` and add your OpenAI API key:
 
 ```
-ANTHROPIC_API_KEY=your_api_key_here
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL
 PORT=3000
 ```
 
-Get your API key from: https://console.anthropic.com/
+Get your API key from: https://openai.com/
 
 ### 3. Run the Application
 
@@ -100,7 +98,8 @@ Make sure your code is in a Git repository (GitHub, GitLab, etc.)
 ### 3. Add Environment Variables
 
 In the Render dashboard, add:
-- `ANTHROPIC_API_KEY`: Your Anthropic API key
+- `OPENAI_API_KEY`: Your Anthropic API key
+- `OPENAI_MODEL`: model version to use
 
 ### 4. Deploy
 
